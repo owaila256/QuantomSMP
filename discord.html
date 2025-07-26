@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantomSMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0e0e0e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-theme {
+      background-color: #ffffff;
+      color: #0e0e0e;
+    }
+    header {
+      background-color: #1c1c1c;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: cyan;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      text-shadow: 0 0 10px cyan;
+    }
+  </style>
+</head>
+<body>
+<button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+<header>
+  <h1>QuantomSMP</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="how-to-join.html">How to Join</a>
+    <a href="rules.html">Rules</a>
+    <a href="discord.html">Discord</a>
+  </nav>
+</header>
+<main>
+
+<h2>💬 Join the QuantomSMP Discord</h2>
+<p>Stay connected with the community anytime, anywhere!</p>
+<ul>
+  <li>📢 Instant Server Updates</li>
+  <li>🎉 Community Events & Giveaways</li>
+  <li>💬 Chat with Other Players</li>
+  <li>🧑‍💼 Direct Help from Staff</li>
+  <li>📚 Guides, Rules, and Tips All in One Place</li>
+</ul>
+<p>👉 <a href="https://discord.gg/MRDkwrX9C7">Click Here to Join Our Discord</a></p>
+
+</main>
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+  }
+</script>
+</body>
+</html>
