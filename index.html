@@ -2,173 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantom Realms | Minecraft Server</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantom Realms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
-    }
-
     body {
-      background: linear-gradient(to bottom, #0f172a, #1a2238);
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f172a;
       color: #f8fafc;
-      line-height: 1.6;
+      scroll-behavior: smooth;
     }
-
     header {
-      background: url('https://i.imgur.com/90xKH0J.png') no-repeat center center/cover;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #60a5fa;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    nav {
-      background: #1e293b;
+      background: #0a0f23;
+      padding: 15px 30px;
       display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
     }
-
+    header h1 {
+      margin: 0;
+      color: #00ffff;
+    }
     nav a {
-      color: #f1f5f9;
+      color: #fff;
+      margin-left: 15px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
-
     nav a:hover {
-      color: #60a5fa;
+      color: #00ffff;
     }
-
+    .hero {
+      background: url("ChatGPT_Image_Jul_29_2025_11_08_24_PM.webp") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 2px 2px #000000;
+    }
     section {
       padding: 60px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
-
-    .features, .vote-links, .staff {
+    h2 {
+      font-size: 2em;
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+    .feature-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 30px;
     }
-
-    .card, .vote-links a {
-      background: #1e293b;
+    .feature-item {
+      background-color: #1e293b;
       padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover, .vote-links a:hover {
-      transform: translateY(-5px);
-      background: #334155;
-    }
-
-    .vote-links a {
+      border-radius: 12px;
       text-align: center;
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
+      box-shadow: 0 0 20px #00ffff33;
+      transition: transform 0.3s;
     }
-
-    .store {
-      text-align: center;
+    .feature-item:hover {
+      transform: translateY(-10px);
     }
-
-    .store iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
+    .feature-desc {
+      font-size: 0.95em;
+      color: #cbd5e1;
     }
-
-    .staff img {
-      width: 64px;
-      height: 64px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
     footer {
-      background: #0f172a;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #94a3b8;
+      padding: 30px 20px;
+      background-color: #0a0f23;
+      color: #64748b;
+    }
+    img.avatar {
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Quantom Realms</h1>
-    <p>IP: QuantumRealms.wither.best | Version: 1.8 – 1.21.1 | Java & Bedrock Supported</p>
-    <p>Online Players: <span id="player-count">Loading...</span></p>
-  </header>
-
+<header>
+  <h1>Quantom Realms</h1>
   <nav>
-    <a href="#about">About</a>
+    <a href="#home">Home</a>
     <a href="#features">Features</a>
-    <a href="#vote">Vote</a>
+    <a href="#rules">Rules</a>
     <a href="#store">Store</a>
     <a href="#staff">Staff</a>
-    <a href="#rules">Rules</a>
-    <a href="https://discord.gg/MRDkwrX9C7" target="_blank">Discord</a>
   </nav>
+</header>
 
-  <section id="about">
-    <h2>About Quantom Realms</h2>
-    <p>Quantom Realms is a survival multiplayer Minecraft experience that blends futuristic magic and clean community play. We offer a smooth, non-pay-to-win experience with unique ranks, leveling, PvP, bosses, and more!</p>
-  </section>
+<section id="home" class="hero">
+  <h2>Welcome to Quantom Realms<br>Unleash Magic, Fight Bosses, Rule the Realm!</h2>
+</section>
 
-  <section id="features">
-    <h2>Features</h2>
-    <div class="features">
-      <div class="card">✅ Land Claiming</div>
-      <div class="card">🏆 Ranks & Leveling</div>
-      <div class="card">⚔️ PvP Arenas</div>
-      <div class="card">💥 Custom Enchants</div>
-      <div class="card">👹 Boss Fights</div>
-      <div class="card">🎉 Weekly Events</div>
+<section id="features">
+  <h2>Features</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>Land Claiming</h3>
+      <p class="feature-desc">Protect your base from griefers with easy-to-use land claim tools.</p>
     </div>
-  </section>
-
-  <section id="vote">
-    <h2>Vote & Support Us</h2>
-    <div class="vote-links">
-      <a href="https://topg.org/minecraft-servers/server-674757" target="_blank">TopG</a>
-      <a href="https://minecraftservers.org/server/677085" target="_blank">MinecraftServers.org</a>
-      <a href="https://mc-servers.com/vote/6004" target="_blank">MC-Servers.com</a>
-      <a href="https://topminecraftservers.org/vote/41322" target="_blank">TopMinecraftServers</a>
-      <a href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Minecraft-MP</a>
+    <div class="feature-item">
+      <h3>Ranks & Leveling</h3>
+      <p class="feature-desc">Rank up by completing quests and gain powerful perks as you grow stronger.</p>
     </div>
-  </section>
+    <div class="feature-item">
+      <h3>Custom Enchants</h3>
+      <p class="feature-desc">Discover magical enchantments never seen before to power up your gear.</p>
+    </div>
+    <div class="feature-item">
+      <h3>PvP Arena</h3>
+      <p class="feature-desc">Fight other players in balanced, exciting PvP matches to win glory.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Bosses</h3>
+      <p class="feature-desc">Team up to defeat massive custom bosses and earn rare loot drops.</p>
+    </div>
+    <div class="feature-item">
+      <h3>Community Events</h3>
+      <p class="feature-desc">Join server-wide events, giveaways, and seasonal festivals for fun & prizes!</p>
+    </div>
+  </div>
+</section>
 
-  <section id="store" class="store">
-    <h2>Visit Our Store</h2>
-    <iframe src="https://arcane-realms.tebex.io/"></iframe>
-  </section>
+<section id="rules">
+  <h2>Server Rules</h2>
+  <ul>
+    <li>✅ Be respectful to all players and staff.</li>
+    <li>❌ No hacking, exploiting, or unfair advantages.</li>
+    <li>🚫 No griefing or stealing in claimed areas.</li>
+    <li>💬 Keep chat appropriate — no spam, slurs, or toxicity.</li>
+    <li>🎮 Use common sense — if it feels wrong, don’t do it.</li>
+    <li>📢 Do not advertise other servers.</li>
+    <li>🛠️ Listen to staff — their word is final in all disputes.</li>
+  </ul>
+</section>
 
-  <section id="staff" class="staff">
-    <h2>Staff Team</h2>
-    <div class="features">
-      <div class="card">
-        <img src="https://mc-heads.net/avatar/owaila256" alt="Owner">
-        <strong>owaila256</strong><br>Owner
+<section id="store">
+  <h2>Store</h2>
+  <p>Our store is coming soon! Check back later or join the Discord for updates.</p>
+</section>
+
+<section id="staff">
+  <h2>Meet Our Staff</h2>
+  <div class="feature-grid">
+
+    <div class="feature-item">
+      <img src="https://minotar.net/armor/body/owaila256/100.png" class="avatar" alt="owaila256" />
+      <h3 style="color: #FFD700;">Owner</h3>
+      <p class="feature-desc">owaila256</p>
+    </div>
+
+    <div class="feature-item">
+      <img src="https://minotar.net/armor/body/Ashketamine/100.png" class="avatar" alt="Ashketamine" />
+      <h3 style="color: #FF69B4;">Co-Owner</h3>
+      <p class="feature-desc">Ashketamine</p>
+    </div>
+
+    <div class="feature-item">
+      <img src="https://minotar.net/armor/body/Sebastiaaann/100.png" class="avatar" alt="Sebastiaaann" />
+      <h3 style="color: #00BFFF;">Developer</h3>
+      <p class="feature-desc">Sebastiaaann</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Quantom Realms. All rights reserved.
+</footer>
+
+</body>
+</html>
