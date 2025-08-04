@@ -4,263 +4,256 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quantom Realms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f172a;
-      color: #f1f5f9;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      box-sizing: border-box;
     }
 
-    nav {
-      background-color: #020617;
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.7);
       padding: 15px 30px;
-      position: fixed;
-      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
       top: 0;
       z-index: 999;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      box-shadow: 0 2px 4px #000;
+    }
+
+    header h1 {
+      color: #00ffff;
+      font-size: 1.8em;
     }
 
     nav a {
-      color: #94a3b8;
+      color: #fff;
+      margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #38bdf8;
+      color: #00ffff;
     }
 
     .hero {
-      background: url("https://cdn.openai.com/chatgpt/image/ChatGPT_Image_Jul_29_2025_11_08_24_PM.webp") no-repeat center center/cover;
+      background: url("ChatGPT_Image_Jul_29_2025_11_08_24_PM.webp") center/cover no-repeat;
       height: 50vh;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.6);
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-content {
       text-align: center;
-      color: #ffffff;
-      padding: 20px;
+      position: relative;
     }
 
-    .hero-content h1 {
-      font-size: 3em;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
       color: #00ffff;
-      margin: 0;
-      text-shadow: 2px 2px 10px #000;
+      text-shadow: 2px 2px 5px #000;
     }
 
-    .hero-content h2 {
-      font-size: 1.6em;
-      color: #ffffff;
-    }
-
-    .hero-content p {
-      font-size: 1.2em;
-      color: #cbd5e1;
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
 
     section {
-      padding: 60px 20px;
-      text-align: center;
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     h2 {
-      font-size: 2.5em;
+      font-size: 2rem;
+      color: #00ffff;
       margin-bottom: 20px;
-    }
-
-    .feature-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .feature-item {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      width: 250px;
-      box-shadow: 0 0 10px #0005;
-      transition: transform 0.3s;
-    }
-
-    .feature-item:hover {
-      transform: scale(1.05);
-    }
-
-    .feature-desc {
-      margin-top: 10px;
-      font-size: 1em;
-      color: #e2e8f0;
-    }
-
-    .rule-list {
-      max-width: 600px;
-      margin: auto;
-      text-align: left;
-    }
-
-    .rule-list li {
-      padding: 8px 0;
-    }
-
-    footer {
-      background: #020617;
-      padding: 20px;
-      color: #64748b;
       text-align: center;
     }
 
-    @media (max-width: 768px) {
-      .feature-grid {
-        flex-direction: column;
-        align-items: center;
-      }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
 
-      nav {
-        flex-wrap: wrap;
-      }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00ffff70;
+    }
+
+    .card img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #00ffff;
+      margin-bottom: 8px;
+    }
+
+    .vote-links a {
+      display: block;
+      background: #0ea5e9;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .vote-links a:hover {
+      background: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #1e293b;
+      color: #94a3b8;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
+<header>
+  <h1>Quantom Realms</h1>
   <nav>
     <a href="#home">Home</a>
     <a href="#features">Features</a>
-    <a href="#rules">Rules</a>
     <a href="#vote">Vote</a>
     <a href="#store">Store</a>
+    <a href="#rules">Rules</a>
     <a href="#staff">Staff</a>
+    <a href="https://discord.gg/MRDkwrX9C7" target="_blank">Discord</a>
   </nav>
+</header>
 
-  <section id="home" class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h2>Welcome to</h2>
-        <h1>Quantom Realms</h1>
-        <p>Unleash Magic • Fight Bosses • Rule the Realm</p>
-      </div>
+<section id="home" class="hero">
+  <div>
+    <h1>Welcome to Quantom Realms</h1>
+    <p>Explore. Level Up. Dominate.</p>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Land Claiming</h3>
+      <p>Protect your builds and territory with our easy-to-use claim system.</p>
     </div>
-  </section>
-
-  <section id="features">
-    <h2>Server Features</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <h3>Land Claiming</h3>
-        <p class="feature-desc">Protect your builds and create safe towns for your friends.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Ranks</h3>
-        <p class="feature-desc">Progress through exciting ranks and unlock powerful abilities.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Skills & Jobs</h3>
-        <p class="feature-desc">Level up in custom jobs like miner, hunter, smelter and more.</p>
-      </div>
-      <div class="feature-item">
-        <h3>PvP Arena</h3>
-        <p class="feature-desc">Fight players and rise to the top of the leaderboard!</p>
-      </div>
-      <div class="feature-item">
-        <h3>Crates & Rewards</h3>
-        <p class="feature-desc">Open crates for powerful gear, tools, and rare items.</p>
-      </div>
-      <div class="feature-item">
-        <h3>Custom Enchants</h3>
-        <p class="feature-desc">Enhance your weapons and armor with powerful enchantments.</p>
-      </div>
+    <div class="card">
+      <h3>Custom Ranks</h3>
+      <p>Earn unique ranks through playtime, skills, and progression.</p>
     </div>
-  </section>
-
-  <section id="rules">
-    <h2>Server Rules</h2>
-    <ul class="rule-list">
-      <li>1. No griefing or stealing from other players.</li>
-      <li>2. Be respectful—no toxic behavior, slurs, or harassment.</li>
-      <li>3. No hacking, cheating, or unfair mods.</li>
-      <li>4. Keep chat clean and avoid spamming.</li>
-      <li>5. Do not advertise other servers.</li>
-      <li>6. Follow staff directions at all times.</li>
-      <li>7. Use English in main chat.</li>
-    </ul>
-  </section>
-
-  <section id="vote">
-    <h2>Vote for Us</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <h3>TopG</h3>
-        <p class="feature-desc"><a href="https://topg.org/minecraft-servers/server-674757" target="_blank">Vote Here</a></p>
-      </div>
-      <div class="feature-item">
-        <h3>MinecraftServers.org</h3>
-        <p class="feature-desc"><a href="https://minecraftservers.org/server/677085" target="_blank">Vote Here</a></p>
-      </div>
-      <div class="feature-item">
-        <h3>MC-Servers.com</h3>
-        <p class="feature-desc"><a href="https://mc-servers.com/vote/6004" target="_blank">Vote Here</a></p>
-      </div>
-      <div class="feature-item">
-        <h3>Top Minecraft Servers</h3>
-        <p class="feature-desc"><a href="https://topminecraftservers.org/vote/41322" target="_blank">Vote Here</a></p>
-      </div>
-      <div class="feature-item">
-        <h3>Minecraft-MP</h3>
-        <p class="feature-desc"><a href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Vote Here</a></p>
-      </div>
+    <div class="card">
+      <h3>Leveling Skills</h3>
+      <p>Improve your mining, farming, and combat skills with RPG-like progression.</p>
     </div>
-  </section>
-
-  <section id="store">
-    <h2>Store</h2>
-    <p>Coming soon. Visit: <a href="https://arcane-realms.tebex.io/" target="_blank">arcane-realms.tebex.io</a></p>
-  </section>
-
-  <section id="staff">
-    <h2>Meet Our Staff</h2>
-    <div class="feature-grid">
-      <div class="feature-item">
-        <img src="https://minotar.net/armor/body/owaila256/100.png" alt="owaila256" />
-        <h3 style="color: #FFD700;">Owner</h3>
-        <p class="feature-desc">owaila256</p>
-      </div>
-      <div class="feature-item">
-        <img src="https://minotar.net/armor/body/Ashketamine/100.png" alt="Ashketamine" />
-        <h3 style="color: #FF69B4;">Co-Owner</h3>
-        <p class="feature-desc">Ashketamine</p>
-      </div>
-      <div class="feature-item">
-        <img src="https://minotar.net/armor/body/Sebastiaaann/100.png" alt="Sebastiaaann" />
-        <h3 style="color: #00BFFF;">Developer</h3>
-        <p class="feature-desc">Sebastiaaann</p>
-      </div>
+    <div class="card">
+      <h3>Events</h3>
+      <p>Join frequent server-wide events with awesome rewards and fun.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Custom Enchants</h3>
+      <p>Discover magical enchants and gear that give you an edge in battle.</p>
+    </div>
+    <div class="card">
+      <h3>PvP Arena</h3>
+      <p>Battle your enemies in our epic PvP zone for honor and loot.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Quantom Realms. All rights reserved.</p>
-  </footer>
+<section id="vote">
+  <h2>Vote for Rewards</h2>
+  <div class="vote-links">
+    <a href="https://topg.org/minecraft-servers/server-674757" target="_blank">Vote on TopG</a>
+    <a href="https://minecraftservers.org/server/677085" target="_blank">Vote on MinecraftServers.org</a>
+    <a href="https://mc-servers.com/vote/6004" target="_blank">Vote on MC-Servers.com</a>
+    <a href="https://topminecraftservers.org/vote/41322" target="_blank">Vote on TopMinecraftServers</a>
+    <a href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Vote on Minecraft-MP</a>
+  </div>
+</section>
+
+<section id="store">
+  <h2>Server Store</h2>
+  <p>Coming soon! Our store will open at <strong><a href="https://arcane-realms.tebex.io/" target="_blank">arcane-realms.tebex.io</a></strong></p>
+</section>
+
+<section id="rules">
+  <h2>Server Rules</h2>
+  <ul>
+    <li>🚫 No griefing or stealing.</li>
+    <li>🗣 Be respectful and avoid toxic behavior.</li>
+    <li>🛠 No hacks, exploits, or unfair modifications.</li>
+    <li>🌐 English only in global chat.</li>
+    <li>💬 No spamming or advertising.</li>
+    <li>📜 Follow staff instructions at all times.</li>
+  </ul>
+</section>
+
+<section id="staff">
+  <h2>Meet the Staff</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://minotar.net/avatar/owaila256/64" alt="owaila256">
+      <h3>owaila256</h3>
+      <p>Owner</p>
+    </div>
+    <div class="card">
+      <img src="https://minotar.net/avatar/Ashketamine/64" alt="Ashketamine">
+      <h3>Ashketamine</h3>
+      <p>Co-Owner</p>
+    </div>
+    <div class="card">
+      <img src="https://minotar.net/avatar/Sebastiaaann/64" alt="Sebastiaaann">
+      <h3>Sebastiaaann</h3>
+      <p>Developer</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Quantom Realms — Minecraft Java & Bedrock Server</p>
+  <p>IP: QuantumRealms.wither.best | Version: 1.8 – 1.21.8</p>
+</footer>
 
 </body>
 </html>
