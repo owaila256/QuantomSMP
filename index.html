@@ -2,243 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quantom Realms</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
   <style>
     :root {
+      --bg: #0f172a;
+      --primary: #00f6ff;
+      --glass: rgba(255, 255, 255, 0.1);
       --neon: #0ff;
-      --dark: #0a0f1a;
-      --purple: #6f42c1;
-      --glass: rgba(255, 255, 255, 0.05);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      --text: #f8fafc;
     }
 
     body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at top, #0a0f1a, #000);
-      color: white;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-image: url('your_banner_url_here.webp'); /* Replace with your banner URL */
-      background-size: cover;
-      background-position: center;
-      height: 50vh;
+      background: url('banner.webp') center/cover no-repeat;
+      height: 60vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
+      align-items: center;
       text-align: center;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      color: white;
     }
 
     header h1 {
+      font-size: 3.5rem;
       font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      color: var(--neon);
-      z-index: 2;
-      text-shadow: 0 0 15px var(--neon);
+      text-shadow: 0 0 20px var(--neon);
     }
 
     nav {
+      background: var(--glass);
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-      background-color: #060b12;
-      border-bottom: 2px solid var(--neon);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      backdrop-filter: blur(10px);
     }
 
     nav a {
-      color: white;
+      color: var(--text);
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: var(--neon);
-      text-shadow: 0 0 10px var(--neon);
+      color: var(--primary);
     }
 
     section {
       padding: 4rem 2rem;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 2rem;
-      color: var(--neon);
       text-align: center;
-      text-shadow: 0 0 10px var(--neon);
+      color: var(--primary);
     }
 
-    .features, .vote-links, .rules-list {
+    .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
-    .card, .vote-card, .rule-card {
+    .card {
       background: var(--glass);
-      backdrop-filter: blur(6px);
-      border: 1px solid var(--neon);
-      padding: 1.5rem;
-      border-radius: 10px;
-      transition: 0.4s;
-      text-align: center;
-    }
-
-    .card:hover, .vote-card:hover, .rule-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px var(--neon);
-    }
-
-    .vote-card a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      display: block;
-    }
-
-    .vote-card a:hover {
-      color: var(--neon);
-      text-shadow: 0 0 10px var(--neon);
-    }
-
-    .staff-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .staff-card {
-      background: var(--glass);
-      backdrop-filter: blur(5px);
-      padding: 1rem;
-      border-radius: 10px;
-      border: 1px solid var(--purple);
-      text-align: center;
-      width: 200px;
-    }
-
-    .staff-card img {
-      width: 64px;
-      height: 64px;
-    }
-
-    .staff-card h3 {
-      margin: 0.5rem 0 0.2rem;
-    }
-
-    .footer {
-      text-align: center;
       padding: 2rem;
-      background: #060b12;
-      color: #aaa;
-      font-size: 0.9rem;
-      border-top: 2px solid var(--neon);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--neon);
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--neon);
+    }
+
+    .staff-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #111827;
+      padding: 2rem;
+      text-align: center;
+      color: var(--text);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to Quantom Realms</h1>
-  </header>
+<header>
+  <h1>Quantom Realms</h1>
+</header>
 
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#vote">Vote</a>
-    <a href="#rules">Rules</a>
-    <a href="#staff">Staff</a>
-    <a href="#store">Store</a>
-    <a href="https://discord.gg/MRDkwrX9C7" target="_blank">Discord</a>
-  </nav>
+<nav>
+  <a href="#features">Features</a>
+  <a href="#vote">Vote</a>
+  <a href="#rules">Rules</a>
+  <a href="#staff">Staff</a>
+  <a href="#store">Store</a>
+  <a href="#status">Status</a>
+  <a href="https://discord.gg/MRDkwrX9C7" target="_blank">Discord</a>
+</nav>
 
-  <section id="features">
-    <h2 class="section-title">Server Features</h2>
-    <div class="features">
-      <div class="card"><h3>Land Claiming</h3><p>Protect your land and builds from griefers.</p></div>
-      <div class="card"><h3>Ranks</h3><p>Progress through in-game ranks and earn perks.</p></div>
-      <div class="card"><h3>Leveling</h3><p>Skill-based system for mining, fishing, and more.</p></div>
-      <div class="card"><h3>Events</h3><p>Weekly challenges with fun community rewards!</p></div>
-      <div class="card"><h3>Custom Enchants</h3><p>Exclusive armor & weapon enchants.</p></div>
-      <div class="card"><h3>PvP Arena</h3><p>1v1s and team battles in our custom arena.</p></div>
-    </div>
-  </section>
-
-  <section id="vote">
-    <h2 class="section-title">Vote for Rewards</h2>
-    <div class="vote-links">
-      <div class="vote-card"><a href="https://topg.org/minecraft-servers/server-674757" target="_blank">TopG</a></div>
-      <div class="vote-card"><a href="https://minecraftservers.org/server/677085" target="_blank">MinecraftServers.org</a></div>
-      <div class="vote-card"><a href="https://mc-servers.com/vote/6004" target="_blank">MC-Servers</a></div>
-      <div class="vote-card"><a href="https://topminecraftservers.org/vote/41322" target="_blank">TopMinecraftServers</a></div>
-      <div class="vote-card"><a href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Minecraft-MP</a></div>
-    </div>
-  </section>
-
-  <section id="rules">
-    <h2 class="section-title">Server Rules</h2>
-    <div class="rules-list">
-      <div class="rule-card"><h3>1. No Griefing</h3><p>Respect others' builds and claims.</p></div>
-      <div class="rule-card"><h3>2. No Hacking</h3><p>Any unfair advantage = instant ban.</p></div>
-      <div class="rule-card"><h3>3. Be Respectful</h3><p>Respect all players and staff at all times.</p></div>
-      <div class="rule-card"><h3>4. No Spamming</h3><p>Don't flood the chat or advertise.</p></div>
-      <div class="rule-card"><h3>5. Keep Chat Clean</h3><p>No NSFW, hate speech, or toxic language.</p></div>
-      <div class="rule-card"><h3>6. English Only</h3><p>Please use English in public chat.</p></div>
-    </div>
-  </section>
-
-  <section id="staff">
-    <h2 class="section-title">Meet the Staff</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <img src="https://mc-heads.net/avatar/owaila256" alt="Owaila256">
-        <h3>Owaila256</h3>
-        <p><strong>Owner</strong></p>
-      </div>
-      <div class="staff-card">
-        <img src="https://mc-heads.net/avatar/Ashketamine" alt="Ashketamine">
-        <h3>Ashketamine</h3>
-        <p><strong>Co-Owner</strong></p>
-      </div>
-      <div class="staff-card">
-        <img src="https://mc-heads.net/avatar/Sebastiaaann" alt="Sebastiaaann">
-        <h3>Sebastiaaann</h3>
-        <p><strong>Developer</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section id="store">
-    <h2 class="section-title">Store</h2>
-    <p>Coming soon! Or visit our Tebex store: <a href="https://QuantomRealms.tebex.io/" target="_blank">Click Here</a></p>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 Quantom Realms – IP: <strong>QuantumRealms.wither.best</strong> | Made with ❤️ by the community
+<section id="features">
+  <h2 class="section-title">Features</h2>
+  <div class="card-grid">
+    <div class="card"><h3>Land Claiming</h3><p>Protect your land from griefers.</p></div>
+    <div class="card"><h3>Ranks</h3><p>Unlock ranks and perks as you play!</p></div>
+    <div class="card"><h3>Leveling Skills</h3><p>Improve mining, farming, and more.</p></div>
+    <div class="card"><h3>Custom Enchants</h3><p>Discover powerful, unique enchantments.</p></div>
+    <div class="card"><h3>Bosses</h3><p>Fight epic bosses for rewards!</p></div>
+    <div class="card"><h3>Events</h3><p>Participate in regular events for prizes.</p></div>
   </div>
+</section>
+
+<section id="vote">
+  <h2 class="section-title">Vote For Rewards</h2>
+  <div class="card-grid">
+    <a class="card" href="https://topg.org/minecraft-servers/server-674757" target="_blank"><h3>TopG</h3></a>
+    <a class="card" href="https://minecraftservers.org/server/677085" target="_blank"><h3>MinecraftServers.org</h3></a>
+    <a class="card" href="https://mc-servers.com/vote/6004" target="_blank"><h3>MC-Servers.com</h3></a>
+    <a class="card" href="https://topminecraftservers.org/vote/41322" target="_blank"><h3>TopMinecraftServers</h3></a>
+    <a class="card" href="https://minecraft-mp.com/server/346992/vote/" target="_blank"><h3>Minecraft-MP</h3></a>
+  </div>
+</section>
+
+<section id="rules">
+  <h2 class="section-title">Server Rules</h2>
+  <div class="card-grid">
+    <div class="card"><h3>No Griefing</h3><p>Respect player builds and claims.</p></div>
+    <div class="card"><h3>No Hacking</h3><p>Mods or hacks that give unfair advantages are banned.</p></div>
+    <div class="card"><h3>Respect Staff</h3><p>Listen to the staff team’s instructions.</p></div>
+    <div class="card"><h3>No Spamming</h3><p>Keep chat clean and respectful.</p></div>
+    <div class="card"><h3>No Duping</h3><p>Using bugs to duplicate items will get you banned.</p></div>
+    <div class="card"><h3>English Only</h3><p>Use English in main chat for clarity.</p></div>
+  </div>
+</section>
+
+<section id="staff">
+  <h2 class="section-title">Staff Team</h2>
+  <div class="card-grid">
+    <div class="card">
+      <img class="staff-avatar" src="https://mc-heads.net/avatar/owaila256" alt="Owaila256">
+      <h3>Owaila256</h3>
+      <p><strong>Owner</strong></p>
+    </div>
+    <div class="card">
+      <img class="staff-avatar" src="https://mc-heads.net/avatar/Ashketamine" alt="Ashketamine">
+      <h3>Ashketamine</h3>
+      <p><strong>Co-Owner</strong></p>
+    </div>
+    <div class="card">
+      <img class="staff-avatar" src="https://mc-heads.net/avatar/Sebastiaaann" alt="Sebastiaaann">
+      <h3>Sebastiaaann</h3>
+      <p><strong>Developer</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="store">
+  <h2 class="section-title">Store</h2>
+  <p style="text-align: center;">Visit our store here: <a href="https://arcane-realms.tebex.io" target="_blank">arcane-realms.tebex.io</a></p>
+</section>
+
+<section id="status">
+  <h2 class="section-title">Server Status</h2>
+  <div class="card" id="server-status">
+    <h3>Players Online</h3>
+    <p id="player-count">Loading...</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Quantom Realms. All Rights Reserved.
+</footer>
+
+<script>
+  async function fetchPlayerCount() {
+    const serverIP = "quantumrealms.wither.best";
+    const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}`);
+    const data = await response.json();
+
+    const countEl = document.getElementById("player-count");
+    if (data.online) {
+      countEl.textContent = `${data.players.online} / ${data.players.max} players online`;
+    } else {
+      countEl.textContent = "Server is offline";
+    }
+  }
+
+  fetchPlayerCount();
+  setInterval(fetchPlayerCount, 30000);
+</script>
 
 </body>
 </html>
