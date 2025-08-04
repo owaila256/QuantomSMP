@@ -3,216 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quantom Realms</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <title>QuantomRealms | Community & Events</title>
   <style>
-    :root {
-      --bg: #0f172a;
-      --primary: #00f6ff;
-      --glass: rgba(255, 255, 255, 0.1);
-      --neon: #0ff;
-      --text: #f8fafc;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f0f1b, #1a1a2e);
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
     header {
-      background: url('banner.webp') center/cover no-repeat;
-      height: 60vh;
+      background-image: url('https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png');
+      background-size: cover;
+      background-position: center;
+      height: 50vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
     }
 
     header h1 {
-      font-size: 3.5rem;
-      font-family: 'Orbitron', sans-serif;
-      text-shadow: 0 0 20px var(--neon);
+      font-size: 3em;
+      background: linear-gradient(to right, #00ffff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px #00ffff80;
     }
 
-    nav {
-      background: var(--glass);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      backdrop-filter: blur(10px);
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--primary);
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-left: 5px solid #00ffff;
+      padding-left: 15px;
     }
 
-    .card-grid {
+    .countdown-container, .winners-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    .card {
-      background: var(--glass);
-      padding: 2rem;
+    .event, .winner {
+      background: #1e1e2f;
+      padding: 20px;
       border-radius: 12px;
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--neon);
-      text-align: center;
-      transition: 0.4s;
+      box-shadow: 0 0 15px #00ffff20;
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px var(--neon);
+    .event:hover, .winner:hover {
+      transform: translateY(-5px);
     }
 
-    .staff-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
+    .event h3, .winner h3 {
+      color: #a855f7;
+    }
+
+    .countdown {
+      font-size: 1.5em;
+      color: #00ffff;
     }
 
     footer {
-      background: #111827;
-      padding: 2rem;
       text-align: center;
-      color: var(--text);
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaaaaa;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Quantom Realms</h1>
-</header>
+  <header>
+    <h1>Welcome to QuantomRealms Events</h1>
+  </header>
 
-<nav>
-  <a href="#features">Features</a>
-  <a href="#vote">Vote</a>
-  <a href="#rules">Rules</a>
-  <a href="#staff">Staff</a>
-  <a href="#store">Store</a>
-  <a href="#status">Status</a>
-  <a href="https://discord.gg/MRDkwrX9C7" target="_blank">Discord</a>
-</nav>
-
-<section id="features">
-  <h2 class="section-title">Features</h2>
-  <div class="card-grid">
-    <div class="card"><h3>Land Claiming</h3><p>Protect your land from griefers.</p></div>
-    <div class="card"><h3>Ranks</h3><p>Unlock ranks and perks as you play!</p></div>
-    <div class="card"><h3>Leveling Skills</h3><p>Improve mining, farming, and more.</p></div>
-    <div class="card"><h3>Custom Enchants</h3><p>Discover powerful, unique enchantments.</p></div>
-    <div class="card"><h3>Bosses</h3><p>Fight epic bosses for rewards!</p></div>
-    <div class="card"><h3>Events</h3><p>Participate in regular events for prizes.</p></div>
-  </div>
-</section>
-
-<section id="vote">
-  <h2 class="section-title">Vote For Rewards</h2>
-  <div class="card-grid">
-    <a class="card" href="https://topg.org/minecraft-servers/server-674757" target="_blank"><h3>TopG</h3></a>
-    <a class="card" href="https://minecraftservers.org/server/677085" target="_blank"><h3>MinecraftServers.org</h3></a>
-    <a class="card" href="https://mc-servers.com/vote/6004" target="_blank"><h3>MC-Servers.com</h3></a>
-    <a class="card" href="https://topminecraftservers.org/vote/41322" target="_blank"><h3>TopMinecraftServers</h3></a>
-    <a class="card" href="https://minecraft-mp.com/server/346992/vote/" target="_blank"><h3>Minecraft-MP</h3></a>
-  </div>
-</section>
-
-<section id="rules">
-  <h2 class="section-title">Server Rules</h2>
-  <div class="card-grid">
-    <div class="card"><h3>No Griefing</h3><p>Respect player builds and claims.</p></div>
-    <div class="card"><h3>No Hacking</h3><p>Mods or hacks that give unfair advantages are banned.</p></div>
-    <div class="card"><h3>Respect Staff</h3><p>Listen to the staff team’s instructions.</p></div>
-    <div class="card"><h3>No Spamming</h3><p>Keep chat clean and respectful.</p></div>
-    <div class="card"><h3>No Duping</h3><p>Using bugs to duplicate items will get you banned.</p></div>
-    <div class="card"><h3>English Only</h3><p>Use English in main chat for clarity.</p></div>
-  </div>
-</section>
-
-<section id="staff">
-  <h2 class="section-title">Staff Team</h2>
-  <div class="card-grid">
-    <div class="card">
-      <img class="staff-avatar" src="https://mc-heads.net/avatar/owaila256" alt="Owaila256">
-      <h3>Owaila256</h3>
-      <p><strong>Owner</strong></p>
+  <section class="section">
+    <h2 class="section-title">🗓️ Upcoming Events</h2>
+    <div class="countdown-container">
+      <div class="event">
+        <h3>August PvP Tournament</h3>
+        <p class="countdown" id="event1">Loading...</p>
+        <p>Show off your skills in our bracket-style 1v1 PvP showdown!</p>
+      </div>
+      <div class="event">
+        <h3>Treasure Hunt</h3>
+        <p class="countdown" id="event2">Loading...</p>
+        <p>Find hidden chests across the world for amazing loot.</p>
+      </div>
     </div>
-    <div class="card">
-      <img class="staff-avatar" src="https://mc-heads.net/avatar/Ashketamine" alt="Ashketamine">
-      <h3>Ashketamine</h3>
-      <p><strong>Co-Owner</strong></p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">🏆 Recent Winners</h2>
+    <div class="winners-container">
+      <div class="winner">
+        <h3>Owaila256</h3>
+        <p>🏆 1st Place - July Build Battle</p>
+      </div>
+      <div class="winner">
+        <h3>Ashketamine</h3>
+        <p>🎯 Winner - Parkour Challenge</p>
+      </div>
+      <div class="winner">
+        <h3>Sebastiaaann</h3>
+        <p>⚔️ Champion - PvP Arena</p>
+      </div>
     </div>
-    <div class="card">
-      <img class="staff-avatar" src="https://mc-heads.net/avatar/Sebastiaaann" alt="Sebastiaaann">
-      <h3>Sebastiaaann</h3>
-      <p><strong>Developer</strong></p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="store">
-  <h2 class="section-title">Store</h2>
-  <p style="text-align: center;">Visit our store here: <a href="https://arcane-realms.tebex.io" target="_blank">arcane-realms.tebex.io</a></p>
-</section>
+  <footer>
+    &copy; 2025 QuantomRealms - Community Crafted by Players, for Players.
+  </footer>
 
-<section id="status">
-  <h2 class="section-title">Server Status</h2>
-  <div class="card" id="server-status">
-    <h3>Players Online</h3>
-    <p id="player-count">Loading...</p>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 Quantom Realms. All Rights Reserved.
-</footer>
-
-<script>
-  async function fetchPlayerCount() {
-    const serverIP = "quantumrealms.wither.best";
-    const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}`);
-    const data = await response.json();
-
-    const countEl = document.getElementById("player-count");
-    if (data.online) {
-      countEl.textContent = `${data.players.online} / ${data.players.max} players online`;
-    } else {
-      countEl.textContent = "Server is offline";
+  <script>
+    function updateCountdown(id, dateStr) {
+      const countDownDate = new Date(dateStr).getTime();
+      const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        if (distance < 0) {
+          document.getElementById(id).innerText = "Event is LIVE!";
+          clearInterval(interval);
+        } else {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById(id).innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+      }, 1000);
     }
-  }
 
-  fetchPlayerCount();
-  setInterval(fetchPlayerCount, 30000);
-</script>
+    // Event countdowns (edit the dates manually)
+    updateCountdown("event1", "August 10, 2025 18:00:00");
+    updateCountdown("event2", "August 15, 2025 15:00:00");
+  </script>
 
 </body>
 </html>
