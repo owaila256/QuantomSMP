@@ -1,0 +1,243 @@
+/* === General Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a0f1c;
+  color: #f8f9fa;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #0ff;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: #6ff;
+}
+
+/* === Header Hero === */
+.hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at top, #1e3a8a, #0a0f1c);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.hero-text {
+  z-index: 2;
+  color: white;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button, .btn {
+  background: #0ff;
+  border: none;
+  color: #000;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+button:hover, .btn:hover {
+  background: #00eaff;
+}
+
+/* === Sections === */
+section {
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00e5ff;
+  text-align: center;
+}
+
+/* === Event Cards === */
+.event-card {
+  background: #111827;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px #0ff2;
+}
+.event-card h3 {
+  color: #0ff;
+  margin-bottom: 0.5rem;
+}
+.event-card p,
+.event-card li {
+  font-size: 1rem;
+}
+.event-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+.event-card ul li {
+  padding: 0.3rem 0;
+}
+.event-card button {
+  margin-top: 0.8rem;
+}
+
+/* === Footer === */
+footer {
+  background: #0a0f1c;
+  color: #999;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #1f2937;
+}
+
+/* === Vote Buttons === */
+.vote-btns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.vote-btns a {
+  background: #1e40af;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+.vote-btns a:hover {
+  transform: scale(1.05);
+  background: #2563eb;
+}
+
+/* === Rules Boxes === */
+.rule-category {
+  background: #1e293b;
+  border-left: 4px solid #0ff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+.rule-category h3 {
+  margin-bottom: 0.5rem;
+  color: #0ff;
+}
+.rule-category ul {
+  padding-left: 1.2rem;
+}
+.rule-category ul li {
+  padding: 0.2rem 0;
+}
+
+/* === Socials === */
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.social-icons a {
+  background: #111827;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  color: #0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.social-icons a:hover {
+  transform: scale(1.2);
+  background: #00eaff;
+  color: #000;
+}
+
+/* === Staff Cards === */
+.staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.staff-card {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #0ff3;
+}
+.staff-card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+.staff-card h4 {
+  color: #0ff;
+  margin: 0.2rem 0;
+}
+
+/* === Wiki Placeholder === */
+.wiki {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: #ccc;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  section h2 {
+    font-size: 1.6rem;
+  }
+}
