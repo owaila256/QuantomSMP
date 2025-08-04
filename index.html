@@ -2,70 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QuantomRealms - Home</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuantomRealms | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png" />
 </head>
 <body>
-  <header class="hero">
-    <img class="hero-bg" src="https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png" alt="Banner">
-    <div class="hero-text">
-      <h1>Welcome to QuantomRealms</h1>
-      <p>Events, Community, Rewards — All in One Realm</p>
-      <div class="buttons">
-        <button onclick="copyIP()">Copy IP</button>
-        <span id="ipStatus"></span>
-        <a href="vote.html" class="btn">Vote</a>
-        <a href="store.html" class="btn">Store</a>
-      </div>
-      <p id="onlineCount">Players Online: ?</p>
-      <p id="discordCount">Discord Online: ?</p>
-    </div>
-  </header>
 
-  <section class="events">
-    <h2>🕐 Upcoming Events</h2>
-    <div class="event-card">
-      <h3>Summer Build-Off</h3>
-      <p>🌆 Show off your creativity and win epic rewards!</p>
-      <div id="countdown"></div>
-      <button onclick="alert('Build your best before the deadline!')">Learn More</button>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">QuantomRealms</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-to-join.html">Join</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="vote.html">Vote</a></li>
+      <li><a href="discord.html">Discord</a></li>
+      <li><a href="social.html">Socials</a></li>
+      <li><a href="wiki.html">Wiki</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="staff.html">Staff</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero" style="background-image: url('img/banner.png');">
+    <div class="hero-content">
+      <h1>Welcome to QuantomRealms</h1>
+      <p>Experience epic events, community moments, and more!</p>
+      <button onclick="copyIP()">Copy Server IP</button>
+      <p id="ip-feedback" style="display:none;">IP copied!</p>
     </div>
-    <div class="event-card">
-      <h3>🏆 Recent Winners</h3>
+  </section>
+
+  <!-- Event Countdown & Winners -->
+  <section class="events">
+    <h2>Upcoming Event</h2>
+    <div class="countdown" id="countdown">Loading countdown...</div>
+    <button class="learn-more-btn" onclick="openModal()">Learn More</button>
+
+    <div class="event-winners">
+      <h3>Recent Winners</h3>
       <ul>
-        <li><strong>Owaila256</strong> - Parkour Champion</li>
-        <li><strong>Sebastiaaann</strong> - PvP Tournament Winner</li>
+        <li><strong>Player123</strong> – PvP Tournament</li>
+        <li><strong>BuilderX</strong> – Build Battle</li>
+        <li><strong>RedstonePro</strong> – Redstone Contest</li>
       </ul>
     </div>
   </section>
 
+  <!-- Modal -->
+  <div id="eventModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>About the Event</h3>
+      <p>This event is a server-wide PvP battle happening this weekend. Join to win epic ranks and gear!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 QuantomRealms. All rights reserved.</p>
+    <p>&copy; 2025 QuantomRealms. All rights reserved.</p>
   </footer>
 
-<script>
-function copyIP() {
-  navigator.clipboard.writeText("quantomrealms.wither.best");
-  document.getElementById("ipStatus").innerText = "✔ IP Copied!";
-}
+  <!-- Scripts -->
+  <script>
+    // Countdown script
+    const eventDate = new Date("2025-08-10T18:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) {
+        countdownEl.innerHTML = "Event Started!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
 
-// Countdown timer (example: 3 days left)
-let countdownDate = new Date();
-countdownDate.setDate(countdownDate.getDate() + 3);
+    // Modal
+    function openModal() {
+      document.getElementById("eventModal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("eventModal").style.display = "none";
+    }
 
-let x = setInterval(function() {
-  let now = new Date().getTime();
-  let distance = countdownDate - now;
-  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("countdown").innerHTML = `⏳ ${days} day(s) remaining`;
-
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "🎉 Event Started!";
-  }
-}, 1000);
-</script>
+    // Copy IP
+    function copyIP() {
+      navigator.clipboard.writeText("QuantumRealms.wither.best");
+      document.getElementById("ip-feedback").style.display = "inline";
+      setTimeout(() => {
+        document.getElementById("ip-feedback").style.display = "none";
+      }, 2000);
+    }
+  </script>
 </body>
 </html>
