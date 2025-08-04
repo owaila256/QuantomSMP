@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Socials - QuantomRealms</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      background: radial-gradient(ellipse at top left, #0f172a, #020617);
+      color: #f1f5f9;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: #1e293b;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .socials-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .social-card {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .social-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #22d3ee;
+    }
+
+    .social-card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+
+    .social-card span {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #e0f2fe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #1e293b;
+      color: #cbd5e1;
+    }
+
+    @media screen and (max-width: 600px) {
+      .social-card {
+        width: 140px;
+        height: 140px;
+      }
+
+      .social-card img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .social-card span {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌐 QuantomRealms Socials</h1>
+    <p>Stay connected with our community on every platform!</p>
+  </header>
+
+  <div class="socials-container">
+    <a href="https://discord.gg/YOURINVITE" target="_blank" class="social-card">
+      <img src="img/icons/discord.png" alt="Discord">
+      <span>Discord</span>
+    </a>
+
+    <a href="https://youtube.com/@YourChannel" target="_blank" class="social-card">
+      <img src="img/icons/youtube.png" alt="YouTube">
+      <span>YouTube</span>
+    </a>
+
+    <a href="https://tiktok.com/@YourTikTok" target="_blank" class="social-card">
+      <img src="img/icons/tiktok.png" alt="TikTok">
+      <span>TikTok</span>
+    </a>
+
+    <a href="https://www.instagram.com/YourIG" target="_blank" class="social-card">
+      <img src="img/icons/instagram.png" alt="Instagram">
+      <span>Instagram</span>
+    </a>
+
+    <a href="https://twitter.com/YourX" target="_blank" class="social-card">
+      <img src="img/icons/x.png" alt="X / Twitter">
+      <span>Twitter</span>
+    </a>
+
+    <a href="https://quantomrealms.wither.best" target="_blank" class="social-card">
+      <img src="img/icons/website.png" alt="Website">
+      <span>Website</span>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 QuantomRealms — Join our adventures across the realms!
+  </footer>
+</body>
+</html>
