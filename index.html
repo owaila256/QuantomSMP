@@ -3,214 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QuantomRealms - Events & Community</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-    }
-
-    header {
-      background: url('https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png?width=1400') no-repeat center/cover;
-      height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-
-    header::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    header h1 {
-      font-size: 3rem;
-      z-index: 1;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .events, .winners {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .event-card, .winner-card {
-      background: #1e293b;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 20px #0006;
-      transition: transform 0.2s;
-      position: relative;
-    }
-
-    .event-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .event-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-    }
-
-    .countdown {
-      font-weight: bold;
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      background: #38bdf8;
-      color: #0f172a;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #0ea5e9;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      color: #f8fafc;
-    }
-
-    .modal h2 {
-      margin-top: 0;
-    }
-
-    .close-btn {
-      float: right;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: #f87171;
-    }
-
-    @media screen and (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .modal-content {
-        padding: 20px;
-      }
-    }
-  </style>
+  <title>QuantomRealms - Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png" />
 </head>
 <body>
-
-  <header>
-    <h1>QuantomRealms Events & Community</h1>
+  <header class="hero">
+    <img class="hero-bg" src="https://media.discordapp.net/attachments/1398525489416765520/1399770715221266453/ChatGPT_Image_Jul_29_2025_10_59_31_PM.png" alt="Banner">
+    <div class="hero-text">
+      <h1>Welcome to QuantomRealms</h1>
+      <p>Events, Community, Rewards — All in One Realm</p>
+      <div class="buttons">
+        <button onclick="copyIP()">Copy IP</button>
+        <span id="ipStatus"></span>
+        <a href="vote.html" class="btn">Vote</a>
+        <a href="store.html" class="btn">Store</a>
+      </div>
+      <p id="onlineCount">Players Online: ?</p>
+      <p id="discordCount">Discord Online: ?</p>
+    </div>
   </header>
 
-  <section class="section">
-    <h2>🔥 Upcoming Events</h2>
-    <div class="events">
-      <div class="event-card">
-        <div class="event-title">PvP Tournament</div>
-        <div class="countdown" id="countdown1">Loading...</div>
-        <button class="btn" onclick="openModal('PvP Tournament', 'Join our epic PvP showdown! Win rewards, titles, and bragging rights.')">Learn More</button>
-      </div>
-      <div class="event-card">
-        <div class="event-title">Build Battle</div>
-        <div class="countdown" id="countdown2">Loading...</div>
-        <button class="btn" onclick="openModal('Build Battle', 'Compete to build the most creative structure. Time-limited challenge with voting!')">Learn More</button>
-      </div>
+  <section class="events">
+    <h2>🕐 Upcoming Events</h2>
+    <div class="event-card">
+      <h3>Summer Build-Off</h3>
+      <p>🌆 Show off your creativity and win epic rewards!</p>
+      <div id="countdown"></div>
+      <button onclick="alert('Build your best before the deadline!')">Learn More</button>
+    </div>
+    <div class="event-card">
+      <h3>🏆 Recent Winners</h3>
+      <ul>
+        <li><strong>Owaila256</strong> - Parkour Champion</li>
+        <li><strong>Sebastiaaann</strong> - PvP Tournament Winner</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section">
-    <h2>🏆 Recent Winners</h2>
-    <div class="winners">
-      <div class="winner-card">
-        <strong>owaila256</strong><br/>
-        🥇 Winner of Survival Games
-      </div>
-      <div class="winner-card">
-        <strong>Ashketamine</strong><br/>
-        🥇 Winner of Parkour Challenge
-      </div>
-    </div>
-  </section>
+  <footer>
+    <p>© 2025 QuantomRealms. All rights reserved.</p>
+  </footer>
 
-  <!-- Modal -->
-  <div id="eventModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">×</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalText"></p>
-    </div>
-  </div>
+<script>
+function copyIP() {
+  navigator.clipboard.writeText("quantomrealms.wither.best");
+  document.getElementById("ipStatus").innerText = "✔ IP Copied!";
+}
 
-  <script>
-    // Countdown timers
-    const eventDates = {
-      countdown1: new Date("2025-08-15T18:00:00").getTime(),
-      countdown2: new Date("2025-08-20T20:00:00").getTime(),
-    };
+// Countdown timer (example: 3 days left)
+let countdownDate = new Date();
+countdownDate.setDate(countdownDate.getDate() + 3);
 
-    for (const [id, date] of Object.entries(eventDates)) {
-      setInterval(() => {
-        const now = new Date().getTime();
-        const distance = date - now;
-        const el = document.getElementById(id);
+let x = setInterval(function() {
+  let now = new Date().getTime();
+  let distance = countdownDate - now;
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("countdown").innerHTML = `⏳ ${days} day(s) remaining`;
 
-        if (distance < 0) {
-          el.innerText = "Event Started!";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        el.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }, 1000);
-    }
-
-    // Modal
-    function openModal(title, text) {
-      document.getElementById("modalTitle").innerText = title;
-      document.getElementById("modalText").innerText = text;
-      document.getElementById("eventModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("eventModal").style.display = "none";
-    }
-  </script>
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "🎉 Event Started!";
+  }
+}, 1000);
+</script>
 </body>
 </html>
