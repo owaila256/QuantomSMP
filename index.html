@@ -27,10 +27,10 @@
     }
 
     header {
-      background-image: url('your_banner_url_here.webp'); /* REPLACE THIS WITH YOUR HOSTED BANNER URL */
+      background-image: url('your_banner_url_here.webp'); /* Replace with your banner URL */
       background-size: cover;
       background-position: center;
-      height: 60vh;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -91,24 +91,37 @@
       text-shadow: 0 0 10px var(--neon);
     }
 
-    .features, .vote-links {
+    .features, .vote-links, .rules-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
-    .card {
+    .card, .vote-card, .rule-card {
       background: var(--glass);
       backdrop-filter: blur(6px);
       border: 1px solid var(--neon);
       padding: 1.5rem;
       border-radius: 10px;
       transition: 0.4s;
+      text-align: center;
     }
 
-    .card:hover {
+    .card:hover, .vote-card:hover, .rule-card:hover {
       transform: scale(1.03);
       box-shadow: 0 0 15px var(--neon);
+    }
+
+    .vote-card a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      display: block;
+    }
+
+    .vote-card a:hover {
+      color: var(--neon);
+      text-shadow: 0 0 10px var(--neon);
     }
 
     .staff-grid {
@@ -145,11 +158,6 @@
       font-size: 0.9rem;
       border-top: 2px solid var(--neon);
     }
-
-    a.vote-btn {
-      color: white;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
@@ -170,36 +178,36 @@
   <section id="features">
     <h2 class="section-title">Server Features</h2>
     <div class="features">
-      <div class="card"><h3>Land Claiming</h3><p>Protect your land from griefers and control who builds with you.</p></div>
-      <div class="card"><h3>Ranks</h3><p>Unlock new perks and show off your progress with our custom rank system.</p></div>
-      <div class="card"><h3>Leveling Skills</h3><p>Level up your mining, fishing, and combat for epic abilities!</p></div>
-      <div class="card"><h3>Events</h3><p>Weekly server-wide events with exciting challenges and prizes!</p></div>
-      <div class="card"><h3>Custom Armor & Enchants</h3><p>Explore rare gear and enchants you won’t find in vanilla Minecraft.</p></div>
-      <div class="card"><h3>PvP Arena</h3><p>Show your skills and fight other players in epic duels.</p></div>
+      <div class="card"><h3>Land Claiming</h3><p>Protect your land and builds from griefers.</p></div>
+      <div class="card"><h3>Ranks</h3><p>Progress through in-game ranks and earn perks.</p></div>
+      <div class="card"><h3>Leveling</h3><p>Skill-based system for mining, fishing, and more.</p></div>
+      <div class="card"><h3>Events</h3><p>Weekly challenges with fun community rewards!</p></div>
+      <div class="card"><h3>Custom Enchants</h3><p>Exclusive armor & weapon enchants.</p></div>
+      <div class="card"><h3>PvP Arena</h3><p>1v1s and team battles in our custom arena.</p></div>
     </div>
   </section>
 
   <section id="vote">
     <h2 class="section-title">Vote for Rewards</h2>
     <div class="vote-links">
-      <div class="card"><a class="vote-btn" href="https://topg.org/minecraft-servers/server-674757" target="_blank">Vote on TopG</a></div>
-      <div class="card"><a class="vote-btn" href="https://minecraftservers.org/server/677085" target="_blank">Vote on MinecraftServers</a></div>
-      <div class="card"><a class="vote-btn" href="https://mc-servers.com/vote/6004" target="_blank">Vote on MC-Servers</a></div>
-      <div class="card"><a class="vote-btn" href="https://topminecraftservers.org/vote/41322" target="_blank">Vote on TopMinecraftServers</a></div>
-      <div class="card"><a class="vote-btn" href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Vote on Minecraft-MP</a></div>
+      <div class="vote-card"><a href="https://topg.org/minecraft-servers/server-674757" target="_blank">TopG</a></div>
+      <div class="vote-card"><a href="https://minecraftservers.org/server/677085" target="_blank">MinecraftServers.org</a></div>
+      <div class="vote-card"><a href="https://mc-servers.com/vote/6004" target="_blank">MC-Servers</a></div>
+      <div class="vote-card"><a href="https://topminecraftservers.org/vote/41322" target="_blank">TopMinecraftServers</a></div>
+      <div class="vote-card"><a href="https://minecraft-mp.com/server/346992/vote/" target="_blank">Minecraft-MP</a></div>
     </div>
   </section>
 
   <section id="rules">
     <h2 class="section-title">Server Rules</h2>
-    <ul>
-      <li>No griefing or stealing from other players</li>
-      <li>No hacking, exploiting, or unfair mods</li>
-      <li>Respect all players and staff</li>
-      <li>No spamming or advertising</li>
-      <li>Keep chat friendly and safe for all ages</li>
-      <li>Use English in public chat</li>
-    </ul>
+    <div class="rules-list">
+      <div class="rule-card"><h3>1. No Griefing</h3><p>Respect others' builds and claims.</p></div>
+      <div class="rule-card"><h3>2. No Hacking</h3><p>Any unfair advantage = instant ban.</p></div>
+      <div class="rule-card"><h3>3. Be Respectful</h3><p>Respect all players and staff at all times.</p></div>
+      <div class="rule-card"><h3>4. No Spamming</h3><p>Don't flood the chat or advertise.</p></div>
+      <div class="rule-card"><h3>5. Keep Chat Clean</h3><p>No NSFW, hate speech, or toxic language.</p></div>
+      <div class="rule-card"><h3>6. English Only</h3><p>Please use English in public chat.</p></div>
+    </div>
   </section>
 
   <section id="staff">
@@ -225,11 +233,11 @@
 
   <section id="store">
     <h2 class="section-title">Store</h2>
-    <p>Coming soon! Or visit: <a href="https://QuantomRealms.tebex.io/" target="_blank">Store Page</a></p>
+    <p>Coming soon! Or visit our Tebex store: <a href="https://QuantomRealms.tebex.io/" target="_blank">Click Here</a></p>
   </section>
 
   <div class="footer">
-    &copy; 2025 Quantom Realms – IP: QuantumRealms.wither.best | Designed with ❤️
+    &copy; 2025 Quantom Realms – IP: <strong>QuantumRealms.wither.best</strong> | Made with ❤️ by the community
   </div>
 
 </body>
